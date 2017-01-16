@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Db </title>
+	<link rel="stylesheet" href="static/bootstrap.css">
+	<link rel="stylesheet" href="static/db.css">
+	<script type="text/javascript" src="static/jquery-3.1.1.js"> </script>
+	<script type="text/javascript" src="static/db.js">	
+	</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+
+	<div class="container">
+		<div class="navbar-header">
+      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+     		 <a class="navbar-brand navbar-text" href="http://127.0.0.1:5000">Customer Directory</a>
+   		</div>
+   		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	     	<ul class="nav navbar-nav">
+		        <li  class="navbar-text" id="alldetails"><a href="http://127.0.0.1:5000">Registered <br> customers<span class="sr-only">(current)</span></a></li>
+		        <li class="navbar-text" ><a href="http://127.0.0.1:5000/db">Register</a></li>
+	        
+	      	</ul>
+	      		
+      
+    	</div>
+		
+	</div>
+</nav>
+<div class="container">
+			<h1> Customer Registration Form </h1> <br>
+			<form name="customerForm"  id="upload-file" method="post" enctype="multipart/form-data" onsubmit="return validateForm()" method="POST">
+		 	<div class="row"> 
+			 	<div class="col-md-3"> 
+			 		<div class="row">
+			 			First Name:
+			 		</div><br>	
+			 		<div class="row">
+			 			Last Name:
+			 		</div><br>	
+			 		<div class="row">
+			 			Date of birth (Enter in this format- DD/MM/YYYY):
+			 		</div><br>	
+			 		<div class="row">
+			 			Gender:
+			 		</div><br>	
+			 		<div class="row">
+			 		Occupation:
+			 		</div><br>	
+			 		<div class="row">
+			 		Upload an image:
+			 		</div><br>
+			 	</div> 		
+			 	<div class="col-md-3"> 
+			 		<div class="row">
+			 			<input class="form-control" type="text" id= "fname" name="firstname">
+			 		</div>	
+			 		<div class="row">
+			 			<input class="form-control" type="text" id="lname" name="lastname" required>
+			 		</div>
+			 		<div class="row">
+			 			<input class="form-control" type="text" id="date" name="date"  >
+
+			 		</div><br>		
+			 		<div class="row">
+			 			<div class="radio" name="genders">
+			 				<input type="radio" name="gender" id="m" value="male"> Male 
+			 			</div>
+						<div class="radio" name="genders"> 
+							<input type="radio" name="gender" id="f" value="female">Female
+						</div>		
+					</div>	
+			 		<div class="row">
+			 			<select name="occupation"  > 
+							<option value="Student">Student</option>
+							<option value="Govt employee">Govt employee</option>
+							<option value="Business">Business</option> 
+							<option value="Private Sector employee">Private Sector employee</option> 
+							<option value="House wife">House wife</option> 
+						</select>
+					</div><br>
+					<div class="row">					
+						<input method="post" enctype="multipart/form-data" action="/customer" name="file" id="fileInput" type="file">
+					</div><br><br>		
+				</div>
+			</div>   
+			<div class="row">
+				<div class="col-md-6" >
+					<button class="btn btn-info btn-md pull-right" onclick="myFunc(event)">Submit
+					</button> 	
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="alert alert-success fade in">
+  					
+				</div>
+			</div>
+				
+	 		 
+</form>  
+</div>
+</body>
+</html>
